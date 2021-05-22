@@ -1,0 +1,94 @@
+{
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": false,
+            "displayName": true,
+            "preprocess": false
+          }
+        ],
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "test": "./test",
+              "assets": "./src/assets"
+            }
+          }
+        ],
+        [
+          "inline-react-svg",
+          {
+            "svgo": {
+              "plugins": [
+                {},
+                {
+                  "cleanupIDs": {
+                    "minify": false
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+      ],
+      "presets": ["next/babel"]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": false,
+            "displayName": true,
+            "preprocess": false
+          }
+        ],
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "test": "./test",
+              "assets": "./src/assets"
+            }
+          }
+        ],
+        [
+          "inline-react-svg",
+          {
+            "svgo": {
+              "plugins": [
+                {},
+                {
+                  "cleanupIDs": {
+                    "minify": false
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+      ],
+      "presets": ["next/babel"]
+    }
+  },
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": false,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ]
+}
