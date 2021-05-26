@@ -1,73 +1,80 @@
 import { useState, useEffect } from 'react'
 import * as S from './styles'
 import ResultBlock from 'components/ResultBlock'
-import axios from 'axios'
 import { makeStringFromArr } from 'helpers/functions'
 
-const SubmitForm = ({ setModal, items }) => {
+const SubmitForm = ({ price, reset, setModal, items }) => {
   const [phone, setPhone] = useState(false)
   const [validate, setValidate] = useState(false)
+  const [status, setStatus] = useState(false)
   const [sended, setSended] = useState(false)
-  let itemsForHuman
-  
 
+  const [msgTitle, setMsgTitle] = useState(false)
+  const [msgText, setMsgText] = useState(false)
+  const [humanItems, setHumanItems] = useState(false)
 
   useEffect(() => {
-    if (items.length > 0) {
-      itemsForHuman = makeStringFromArr(items)
-    }
+    items.length && setHumanItems(makeStringFromArr(items))
   }, [items])
 
-  const handlerSubmit = (e) => {
-    e.preventDefault()
 
-    axios({
-      method: 'post',
-      url: 'send.php',
-      headers: { 'content-type': 'application/json' },
-      data: {
+  const handlerSubmit = () => {
+    setValidate(false)
+
+    fetch('send.php', {
+      method: 'POST',
+      mode: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         phone: phone,
-        text: itemsForHuman
-      },
-      validateStatus: (status) => {
-        return true
-      }
-    })
-      .then((result) => {
-        console.log(result)
-        setSended(true)
+        text: humanItems !== '' ? humanItems : false,
+        price: price > 0 ? price.toLocaleString() : false
       })
-      .catch((error) => {
-        console.log(error)
-        setSended(false)
+    })
+      .then((response) => {
+        setStatus(response.status)
+
+        if (response.status !== 200) {
+          setMsgTitle(`Ошибка ${response.status}`)
+          setMsgText('Произошла ошибка при отправке. Попробуйте позже.')
+          return
+        }
+
+        response.json().then((data) => {
+          setMsgTitle(data.title)
+          setMsgText(data.message)
+          setSended(data.sended)
+        })
+      })
+      .catch((err) => {
+        console.log('Fetch Error : ', err)
       })
   }
 
   const handlerChange = (e) => {
     let value = e.target.value
     setPhone(value)
-
     setValidate(value.replace(/•/g, '').trim().length >= 13)
   }
 
   useEffect(() => {
-    sended &&
-      setModal &&
-      setTimeout(() => {
+    if (status && setModal && reset) {
+      let autoClose = setTimeout(() => {
         setModal(false)
+        status === 200 && reset()
       }, 4500)
-  }, [sended, setModal])
+
+      return () => clearTimeout(autoClose)
+    }
+  }, [status, setModal, reset])
 
   return (
     <S.Block>
-      {sended ? (
+      {status ? (
         <S.Done>
-          <S.DoneIcn />
-          <S.DoneTitle>Приняли!</S.DoneTitle>
-          <S.DoneText>
-            <p>Мы получили Вашу заявку и передали её менеджерам.</p>
-            <p>Скоро свяжемся с Вами :)</p>
-          </S.DoneText>
+          {status === 200 && sended ? <S.DoneIcn /> : <S.ErrIcn />}
+          <S.DoneTitle>{msgTitle}</S.DoneTitle>
+          <S.DoneText dangerouslySetInnerHTML={{ __html: msgText }} />
         </S.Done>
       ) : (
         <>
@@ -87,7 +94,7 @@ const SubmitForm = ({ setModal, items }) => {
                 disabled={!validate}
                 mod="base"
                 size="base"
-                onClick={(e) => handlerSubmit(e)}
+                onClick={() => handlerSubmit()}
               >
                 Отправить
               </S.Send>

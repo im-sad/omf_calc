@@ -15,7 +15,6 @@ export const color = {
   danger: 'red',
 }
 
-
 export const media = {
   laptop: '@media screen and (max-width: 960px)',
   tablet: '@media screen and (max-width: 768px)',

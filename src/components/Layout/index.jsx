@@ -6,7 +6,6 @@ import Footer from 'components/Footer'
 import Panel from 'components/Panel'
 import Modal from 'components/BaseModal'
 import SubmitForm from 'components/SubmitForm'
-
 import items from 'mocks/items'
 
 const itemsUnique = items.map((item) => {
@@ -19,10 +18,7 @@ const Layout = () => {
   const [modal, setModal] = useState(false)
   const [price, setPrice] = useState(0)
 
-  useEffect(() => {
-    setStore(itemsUnique)
-  }, [])
-
+  useEffect(() => setStore(itemsUnique), [])
 
   useEffect(() => {
     if (store) {
@@ -32,6 +28,20 @@ const Layout = () => {
       setPrice(newPrice)
     }
   }, [store])
+
+  const handlerReset = () => {
+    setStore(
+      store.map((item) => {
+        if (item.active) {
+          return {
+            ...item,
+            active: false
+          }
+        }
+        return item
+      })
+    )
+  }
 
   return (
     <div className="page">
@@ -43,9 +53,15 @@ const Layout = () => {
         setOpen={setModal}
         store={store}
         setStore={setStore}
+        reset={handlerReset}
       />
       <Modal open={modal} setOpen={setModal} maxWidth={550}>
-        <SubmitForm items={store} setModal={setModal} />
+        <SubmitForm
+          price={price}
+          items={store}
+          setModal={setModal}
+          reset={handlerReset}
+        />
       </Modal>
     </div>
   )

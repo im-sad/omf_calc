@@ -3,12 +3,11 @@ $font-base-lh: 1.5;
 $font-family: 'Roboto', 'Trebuchet MS', 'Helvetica CY', sans-serif;
 $form-line-height: 1.25;
 
-
 @-ms-viewport {
   width:device-width;
 }
 
-html,body,div,span,h1,h2,h3,h4,h5,h6,p,img,em,strike,strong,s,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,section,time,mark,audio,video,main {
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,img,em,strike,strong,s,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,section,time,mark,audio,video,main {
   background: transparent;
   border: 0;
   font-size: 100%;
@@ -58,7 +57,7 @@ ol, ul {list-style:none}
 img {border-style:none;vertical-align:middle;user-select: none;}
 b, strong {font-weight:bold}
 
-//links
+// links
 a {
   background:transparent;
   font-size:100%;
@@ -75,8 +74,8 @@ a:hover {transition-duration: 0.2s;}
 a:hover, a:active {outline:0}
 
 a, area, button, input:not([type="range"]), label, select, textarea {
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 svg:not(:root) {overflow:hidden;}
@@ -84,7 +83,7 @@ svg:not(:root) {overflow:hidden;}
 [hidden] {display:none !important;}
 [tabindex="-1"]:focus {outline: none !important}
 
-//inputs
+// inputs
 input, textarea, select, button {color:inherit;font:inherit;line-height:$form-line-height;font-size:100%;margin:0;vertical-align:baseline;}
 textarea {overflow:auto;vertical-align:top;resize:vertical;}
 input {line-height:normal}

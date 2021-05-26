@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Button from 'elements/Button'
 import { color } from 'helpers/vars'
 import { rgba } from 'polished'
 import InputMask from 'react-input-mask'
 import { ReactComponent as IcnOk } from 'assets/icons/done.svg'
+import { ReactComponent as IcnErr } from 'assets/icons/error.svg'
 
 export const Block = styled.div`
   width: 100%;
@@ -11,9 +12,7 @@ export const Block = styled.div`
 export const Head = styled.div`
   margin-bottom: 40px;
 `
-export const Body = styled.div`
-
-`
+export const Body = styled.div``
 export const Title = styled.b`
   font-weight: 300;
   margin-bottom: 10px;
@@ -54,12 +53,18 @@ export const Send = styled(Button)`
 export const Done = styled.div`
   text-align: center;
 `
-export const DoneIcn = styled(IcnOk)`
+const stylesIcn = css`
   width: 64px;
   height: 64px;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 20px;
+`
+export const DoneIcn = styled(IcnOk)`
+  ${stylesIcn}
+`
+export const ErrIcn = styled(IcnErr)`
+  ${stylesIcn}
 `
 export const DoneTitle = styled.div`
   font-size: 20px;

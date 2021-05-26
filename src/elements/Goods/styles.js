@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
 import { rgba } from 'polished'
 import { color, media } from 'helpers/vars'
+import { lineClamp } from 'helpers/mixins'
 import Image from 'elements/Image'
 
 const ripple = keyframes`
@@ -130,6 +131,7 @@ export const Desc = styled.span`
   display: block;
   margin-top: 5px;
   text-align: center;
+  ${lineClamp(5)}
 
   ${media.mobileL} {
     flex: 0 0 auto;

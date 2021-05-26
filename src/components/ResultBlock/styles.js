@@ -2,10 +2,11 @@ import styled from 'styled-components'
 import { color } from 'helpers/vars'
 
 export const Block = styled.div`
-  background: #eee;
+  background: ${color.muted};
   padding: 16px 20px;
   cursor: default;
 `
+export const Content = styled.div``
 export const List = styled.ul`
   color: ${color.textMuted};
 `
@@ -19,6 +20,10 @@ export const Item = styled.li`
 export const Sub = styled.ul`
   list-style: disc;
   margin-left: 18px;
+
+  &:empty {
+    display: none;
+  }
 `
 export const SubItem = styled.li`
   list-style: disc;
@@ -26,4 +31,5 @@ export const SubItem = styled.li`
 `
 export const Title = styled.b`
   display: block;
+  font-weight: 500;
 `

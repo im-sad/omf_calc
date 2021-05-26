@@ -1,17 +1,15 @@
 import * as S from './styles'
 import { cats } from 'mocks/cats'
 
-
 const ResultBlock = ({ items = [] }) => {
   return (
     <S.Block>
-      <S.List>
+      <S.Content>
         {cats.map((item, index) => {
           return (
-            <>
+            <S.List key={`cat-${index}`}>
               <S.Title>
-                {index < 10 && `0`}
-                {index + 1}. {item.title}
+                {index < 10 && `0`}{index + 1}. {item.title}
               </S.Title>
 
               <S.Sub>
@@ -25,10 +23,10 @@ const ResultBlock = ({ items = [] }) => {
                   }
                 })}
               </S.Sub>
-            </>
+            </S.List>
           )
         })}
-      </S.List>
+      </S.Content>
     </S.Block>
   )
 }

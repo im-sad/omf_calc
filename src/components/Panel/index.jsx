@@ -1,24 +1,10 @@
 import * as S from './styles'
 import Container from 'components/Container'
 
-const Panel = ({ store = [], setStore, setOpen, price = 0 }) => {
+const Panel = ({ reset, setOpen, price = 0 }) => {
   const formatValue = (value) => {
     const roundValue = +value.toFixed(0)
     return `${roundValue.toLocaleString()} ₽`
-  }
-
-  const handlerReset = () => {
-    setStore(
-      store.map((item) => {
-        if (item.active) {
-          return {
-            ...item,
-            active: false
-          }
-        }
-        return item
-      })
-    )
   }
 
   return (
@@ -33,7 +19,11 @@ const Panel = ({ store = [], setStore, setOpen, price = 0 }) => {
           </S.Info>
 
           <S.Buttons>
-            <S.Reset mod="hollow" size="base" onClick={() => handlerReset()}>
+            <S.Reset
+              mod="hollow"
+              size="base"
+              onClick={reset && (() => reset())}
+            >
               Сбросить
             </S.Reset>
             <S.Make mod="base" size="base" onClick={setOpen}>

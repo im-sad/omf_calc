@@ -1,7 +1,15 @@
 export function makeStringFromArr(arr) {
-  let st = ''
+  let value = ''
 
   for (let i = 0; i < arr.length; i++) {
-    st += `${arr[i].name} (${arr[i].price}₽); `
+    if (!arr[i].active) {
+      continue
+    }
+
+    value += `${arr[i].name} (${arr[i].price}₽)`
+
+    value += ', '
   }
+
+  return value.slice(0, -2)
 }
