@@ -24,6 +24,5 @@ export const List = styled.ul`
 `
 export const Item = styled.li`
   display: block;
-  /* min-width: 300px; */
 `
 export const StyledGoods = styled(Goods)``

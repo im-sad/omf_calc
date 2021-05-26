@@ -97,7 +97,7 @@ export const Radio = styled.span`
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #eee;
+  background: ${color.muted};
   transition: background-color 0.3s, box-shadow 0.3s;
 
   ${(props) =>
@@ -127,7 +127,7 @@ export const Title = styled.span`
 `
 export const Desc = styled.span`
   font-size: 12px;
-  color: #a2a2a2;
+  color: ${color.disabled};
   display: block;
   margin-top: 5px;
   text-align: center;
@@ -145,7 +145,7 @@ export const Price = styled.span`
   font-weight: 500;
   margin-top: 20px;
   font-size: 18px;
-  color: rgb(42, 167, 32);
+  color: ${color.positive};
 `
 export const Sale = styled.span`
   position: absolute;
@@ -153,12 +153,12 @@ export const Sale = styled.span`
   top: 10px;
   font-size: 10px;
   text-transform: uppercase;
-  background: rgba(19, 195, 115, 0.8);
+  background: ${rgba(color.badges, 0.8)};
   padding: 2px 10px;
   border-radius: 5px;
-  color: #fff;
+  color: ${color.white};
   text-align: right;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 0 ${rgba(color.black, 0.15)};
 
   ${media.mobileL} {
     display: none;

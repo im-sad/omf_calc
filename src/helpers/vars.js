@@ -5,14 +5,18 @@ export const color = {
   black: '#000',
   text: '#1D1E21',
   textMuted: '#777',
+  disabled: '#a2a2a2',
 
   main: '#307bcb',
   accent: '#de3a58',
   accentHover: '#d12b49',
 
+  positive: '#2aa720',
+  badges: '#13c373',
+
   border: '#ccc',
   muted: '#eee',
-  danger: 'red',
+  danger: 'red'
 }
 
 export const media = {

@@ -12,7 +12,7 @@ export const Block = styled.div`
   background: ${rgba(color.main, 0.89)};
   z-index: 99;
   transform: translateY(101%);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -2px 10px ${rgba(color.black, 0.15)};
   transition: transform 0.3s ease;
 
   ${(props) => props.isvisible && `transform: translateY(0);`}
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  color: ${color.white};
   padding: 10px 0;
   cursor: default;
 

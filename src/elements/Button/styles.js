@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { color } from 'helpers/vars'
+import { rgba } from 'polished'
 
 export const Btn = styled.button`
   display: inline-flex;
@@ -28,12 +29,12 @@ export const Btn = styled.button`
     css`
       background: ${color.accent};
       border-radius: 4px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 2px ${rgba(color.black, 0.15)};
       color: ${color.white};
       transition: opacity 0.3s ease, background 0.3s ease;
       text-transform: uppercase;
       font-weight: 700;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+      text-shadow: 1px 1px 0 ${rgba(color.black, 0.15)};
 
       &:disabled {
         filter: grayscale(100%);
@@ -49,7 +50,7 @@ export const Btn = styled.button`
     props.mod === 'hollow' &&
     css`
       border-radius: 4px;
-      color: #fff;
+      color: ${color.white};
       background: transparent;
       transition: opacity 0.3s ease;
 
