@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { rgba } from 'polished'
 import { color, media } from 'helpers/vars'
 import Button from 'elements/Button'
 import AnimatedNumber from 'animated-number-react'
 
-export const Block = styled.div`
+export const Panel = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;

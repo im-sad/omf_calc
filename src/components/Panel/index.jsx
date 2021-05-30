@@ -8,7 +8,7 @@ const Panel = ({ reset, setOpen, price = 0 }) => {
   }
 
   return (
-    <S.Block isvisible={price}>
+    <S.Panel isvisible={price}>
       <Container>
         <S.Wrapper>
           <S.Info>
@@ -32,7 +32,7 @@ const Panel = ({ reset, setOpen, price = 0 }) => {
           </S.Buttons>
         </S.Wrapper>
       </Container>
-    </S.Block>
+    </S.Panel>
   )
 }
 

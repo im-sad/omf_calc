@@ -3,7 +3,7 @@ import Container from 'components/Container'
 
 const Header = () => {
   return (
-    <S.Block>
+    <S.Header>
       <Container>
         <S.Title>
           Свадебный калькулятор
@@ -21,7 +21,7 @@ const Header = () => {
           <p>Благодарим за интерес к нашей работе :)</p>
         </S.Text>
       </Container>
-    </S.Block>
+    </S.Header>
   )
 }
 

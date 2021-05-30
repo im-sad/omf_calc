@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/macro'
 import { color, media } from 'helpers/vars'
 import { rgba } from 'polished'
 import { ReactComponent as IcnInst } from 'assets/icons/inst.svg'
 import { ReactComponent as IcnVk } from 'assets/icons/vk.svg'
 import { ReactComponent as IcnFb } from 'assets/icons/fb.svg'
 
-export const Block = styled.footer`
+export const Footer = styled.footer`
   border-top: 1px solid ${color.border};
   margin-top: 100px;
   padding-top: 60px;

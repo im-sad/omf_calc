@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { color } from 'helpers/vars'
 import {ReactComponent as IcnClose} from 'assets/icons/close.svg'
 

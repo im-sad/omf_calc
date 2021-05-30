@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 import { color } from 'helpers/vars'
 
 export const GlobalStyle = createGlobalStyle`

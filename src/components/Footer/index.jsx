@@ -4,7 +4,7 @@ import { socials } from 'mocks/socials'
 
 const Footer = () => {
   return (
-    <S.Block>
+    <S.Footer>
       <Container>
         <S.Wrapper>
           <S.Links>
@@ -38,7 +38,7 @@ const Footer = () => {
           </S.Info>
         </S.Wrapper>
       </Container>
-    </S.Block>
+    </S.Footer>
   )
 }
 

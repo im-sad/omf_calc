@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { color } from 'helpers/vars'
 
-export const Block = styled.div`
+export const Result = styled.div`
   background: ${color.muted};
   padding: 16px 20px;
   cursor: default;

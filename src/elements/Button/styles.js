@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/macro'
 import { color } from 'helpers/vars'
 import { rgba } from 'polished'
 

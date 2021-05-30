@@ -5,7 +5,7 @@ import { cats } from 'mocks/cats'
 
 const Main = ({ store =[], setStore }) => {
   return (
-    <S.Block>
+    <S.Main>
       {cats.map((item, index) => {
         return (
           <Zone
@@ -19,7 +19,7 @@ const Main = ({ store =[], setStore }) => {
           </Zone>
         )
       })}
-    </S.Block>
+    </S.Main>
   )
 }
 

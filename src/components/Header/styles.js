@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { media } from 'helpers/vars'
 
-export const Block = styled.header`
+export const Header = styled.header`
   text-align: center;
   padding: 100px 0;
   cursor: default;

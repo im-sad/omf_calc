@@ -46,7 +46,7 @@ const Goods = ({
   }
 
   return (
-    <S.Block onClick={() => handlerClick(id)}>
+    <S.Goods onClick={() => handlerClick(id)}>
       <S.Cover onClick={(e) => handlerRipple(e)}>
         <S.CoverRadius>
           <S.CoverImage
@@ -77,7 +77,7 @@ const Goods = ({
           Аренда <br /> бесплатно
         </S.Sale>
       )}
-    </S.Block>
+    </S.Goods>
   )
 }
 

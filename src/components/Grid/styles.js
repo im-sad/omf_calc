@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Goods from 'elements/Goods'
 import { media } from 'helpers/vars'
 

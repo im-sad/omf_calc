@@ -69,7 +69,7 @@ const SubmitForm = ({ price, reset, setModal, items }) => {
   }, [status, setModal, reset])
 
   return (
-    <S.Block>
+    <S.SubmitForm>
       {status ? (
         <S.Done>
           {status === 200 && sended ? <S.DoneIcn /> : <S.ErrIcn />}
@@ -106,7 +106,7 @@ const SubmitForm = ({ price, reset, setModal, items }) => {
           </S.Body>
         </>
       )}
-    </S.Block>
+    </S.SubmitForm>
   )
 }
 

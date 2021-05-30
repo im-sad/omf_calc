@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/macro'
 import Button from 'elements/Button'
 import { color } from 'helpers/vars'
 import { rgba } from 'polished'
@@ -6,7 +6,7 @@ import InputMask from 'react-input-mask'
 import { ReactComponent as IcnOk } from 'assets/icons/done.svg'
 import { ReactComponent as IcnErr } from 'assets/icons/error.svg'
 
-export const Block = styled.div`
+export const SubmitForm = styled.div`
   width: 100%;
 `
 export const Head = styled.div`

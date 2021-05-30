@@ -3,7 +3,7 @@ import { cats } from 'mocks/cats'
 
 const ResultBlock = ({ items = [] }) => {
   return (
-    <S.Block>
+    <S.Result>
       <S.Content>
         {cats.map((item, index) => {
           return (
@@ -27,7 +27,7 @@ const ResultBlock = ({ items = [] }) => {
           )
         })}
       </S.Content>
-    </S.Block>
+    </S.Result>
   )
 }
 

@@ -1,10 +1,10 @@
 <?
 // Options
-$token = "1190955802:AAGPNDXTgdlxJ0ecP_yQ71UjOrw3Wp_SC3Y";
-$chatid = "401217255";
+$token = "";
+$chatid = "";
 $subject = "Заявка из калькулятора";
-$to = "sadmrak@gmail.com";
-$from = "admin@ohmywedding.ru";
+$to = "";
+$from = "";
 
 
 // Сode start here

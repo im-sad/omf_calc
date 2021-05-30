@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components/macro'
 import { rgba } from 'polished'
 import { color, media } from 'helpers/vars'
 import { lineClamp } from 'helpers/mixins'
@@ -21,7 +21,7 @@ const ripple = keyframes`
   }
 `
 
-export const Block = styled.div`
+export const Goods = styled.div`
   display: block;
   cursor: pointer;
   position: relative;
@@ -85,7 +85,7 @@ export const CoverImage = styled(Image)`
   pointer-events: none;
   z-index: 1;
 
-  ${Block}:hover & {
+  ${Goods}:hover & {
     transform: scale(1.1);
   }
 `

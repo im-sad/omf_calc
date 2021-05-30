@@ -1,3 +1,3 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-export const Block = styled.main``
+export const Main = styled.main``
